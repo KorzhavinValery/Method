@@ -20,16 +20,20 @@ public class Main {
         }
     }
 
-    public static void determineTheDeliveryDays(int deliveryDistance) {
+    public static int determineTheDeliveryDays(int deliveryDistance) {
+        int deliveryDay = 1;
         if (deliveryDistance <= 20) {
-            System.out.println("Потребуется 1 день");
+            System.out.println("Потребуется " + deliveryDay + " день");
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Потребуется 2 дня");
+            ++deliveryDay;
+            System.out.println("Потребуется " + deliveryDay + " дня");
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            System.out.println("Потребуется 3 дня");
+            deliveryDay += 2;
+            System.out.println("Потребуется " + deliveryDay + " дня");
         } else {
             System.out.println("Свыше 100 км доставки нет");
         }
+        return deliveryDay;
     }
 
     public static void main(String[] args) {
