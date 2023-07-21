@@ -20,6 +20,18 @@ public class Main {
         }
     }
 
+    public static void determineTheDeliveryDays(int deliveryDistance) {
+        if (deliveryDistance <= 20) {
+            System.out.println("Потребуется 1 день");
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Потребуется 2 дня");
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("Потребуется 3 дня");
+        } else {
+            System.out.println("Свыше 100 км доставки нет");
+        }
+    }
+
     public static void main(String[] args) {
         task1();
         task2();
@@ -48,6 +60,9 @@ public class Main {
 
     public static void task3() {
         System.out.println("Задача 3");
-
+        Scanner scanner2 = new Scanner(System.in);
+        System.out.println("Введите расстояние до адреса доставки, расстояние в км - ");
+        int distance = scanner2.nextInt();
+        determineTheDeliveryDays(distance);
     }
 }
